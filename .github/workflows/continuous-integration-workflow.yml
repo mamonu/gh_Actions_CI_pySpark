@@ -11,5 +11,5 @@ jobs:
     - name: Build the Docker image
       run: docker build .  --tag testdocker
     - name: run the Docker image
-      run: docker run --rm testdocker pytest -v
+      run: docker run --rm testdocker pytest -v /v1/test
     
