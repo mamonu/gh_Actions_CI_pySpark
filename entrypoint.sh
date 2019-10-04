@@ -1,8 +1,13 @@
 #!/bin/sh -l
 
 
+set -e
 
-# this is entrypoint.sh
 
 
-python -m unittest discover .
+
+echo "#########################################"
+
+sh -c "$*"
+
+echo "#########################################"

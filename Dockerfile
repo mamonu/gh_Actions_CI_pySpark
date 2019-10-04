@@ -1,5 +1,9 @@
 FROM jupyter/all-spark-notebook:latest
-RUN conda install boto3 pytest pytest-cov pytest-xdist pytest-timeout hypothesis hypothesis[pandas] 
+RUN conda install boto3 pytest pytest-cov pytest-xdist pytest-timeout
+
+
+
+RUN pip install --upgrade pip
 
 RUN pip install gluejobutils
 RUN pip install git+git://github.com/moj-analytical-services/etl_manager.git
@@ -16,3 +20,8 @@ USER root
 COPY aptpackages aptpackages
 RUN apt-get update 
 RUN apt-get install -y $(cat aptpackages)
+
+
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
