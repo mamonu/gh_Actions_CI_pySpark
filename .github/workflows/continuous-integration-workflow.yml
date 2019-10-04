@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build .  --tag testdocker
-    - name: run the Docker image
-      run: docker run --rm testdocker pytest -v /project
+      run: |
+        docker build .  --tag testdocker
+        docker run --rm testdocker pytest -v 
     
