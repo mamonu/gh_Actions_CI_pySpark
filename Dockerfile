@@ -22,10 +22,8 @@ RUN apt-get update
 RUN apt-get install -y $(cat aptpackages)
 
 
-
-#!COPY helloworld.py project/
-#!COPY test_adding.py project/
-
+ADD helloworld.py helloworld.py
+ADD test_adding.py test_adding.py
 
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
