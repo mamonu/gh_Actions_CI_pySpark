@@ -19,10 +19,11 @@ USER root
 RUN apt-get update  && apt-get install -y $(cat aptpackages) && rm -rf /var/lib/apt/lists/*
 
 
+
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 
-ADD v1 /v1/
+ADD v1 v1/
 WORKDIR v1/
