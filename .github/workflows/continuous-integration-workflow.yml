@@ -9,5 +9,5 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Get and run the base moj spark local Docker image for testing
-      run:  docker run --rm  mamonu/myimagemoj-spark-jovyan:baseenv /bin/bash -c "cd v1  && pytest -v"
+      run:  docker run --rm  mamonu/moj-spark-jovyan:baseenv /bin/bash -c "cd v1  && pytest -v"
     
