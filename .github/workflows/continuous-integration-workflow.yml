@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Build the Docker image
-      run: |
-        docker build .  --tag testdocker
-        docker run --rm testdocker pytest -v 
+    - name: Get and run the base moj spark local Docker image for testing
+      run:  docker run --rm  mamonu/myimagemoj-spark-jovyan:baseenv /bin/bash -c "cd v1  && pytest -v"
     
