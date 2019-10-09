@@ -8,7 +8,7 @@ def vehicle_clean(df, spark):
     df.registerTempTable('df')
     sql = """
     SELECT *,
-     CASE WHEN Vehicle IS NULL THEN 'Not known'
+     CASE WHEN Vehicle IS NULL THEN 'not known'
          ELSE Vehicle
      END as der_name
     from df

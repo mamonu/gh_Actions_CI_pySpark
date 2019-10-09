@@ -27,16 +27,8 @@ def test_add():
     assert (helloworld.add(1,1)==2)
 
 
-
-
-
 def test_data_count_check():
     assert (df.count()==3)
 
-
-
-
-
-    
     
 
